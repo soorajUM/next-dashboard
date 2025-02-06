@@ -8,7 +8,7 @@ import { lusitana } from "@/app/ui/fonts";
 
 const iconMap = {
   collected: BanknotesIcon,
-  customers: UserGroupIcon,
+  customer: UserGroupIcon,
   pending: ClockIcon,
   invoices: InboxIcon,
 };
@@ -22,9 +22,9 @@ export default async function CardWrapper() {
       <Card title="Pending" value={totalPendingInvoices} type="pending" />
       <Card title="Total Invoices" value={numberOfInvoices} type="invoices" />
       <Card
-        title="Total Customers"
-        value={numberOfCustomers}
-        type="customers"
+        title="Total customer"
+        value={numberOfcustomer}
+        type="customer"
       /> */}
     </>
   );
@@ -37,7 +37,7 @@ export function Card({
 }: {
   title: string;
   value: number | string;
-  type: "invoices" | "customers" | "pending" | "collected";
+  type: "invoices" | "customer" | "pending" | "collected";
 }) {
   const Icon = iconMap[type];
 

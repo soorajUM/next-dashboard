@@ -2,27 +2,27 @@ import Image from "next/image";
 import { lusitana } from "@/app/ui/fonts";
 import Search from "@/app/ui/search";
 import {
-  CustomersTableType,
-  FormattedCustomersTable,
+  customerTableType,
+  FormattedcustomerTable,
 } from "@/app/lib/definitions";
 
-export default async function CustomersTable({
-  customers,
+export default async function customerTable({
+  customer,
 }: {
-  customers: FormattedCustomersTable[];
+  customer: FormattedcustomerTable[];
 }) {
   return (
     <div className="w-full">
       <h1 className={`${lusitana.className} mb-8 text-xl md:text-2xl`}>
-        Customers
+        customer
       </h1>
-      <Search placeholder="Search customers..." />
+      <Search placeholder="Search customer..." />
       <div className="mt-6 flow-root">
         <div className="overflow-x-auto">
           <div className="inline-block min-w-full align-middle">
             <div className="overflow-hidden rounded-md bg-gray-50 p-2 md:pt-0">
               <div className="md:hidden">
-                {customers?.map((customer) => (
+                {customer?.map((customer) => (
                   <div
                     key={customer.id}
                     className="mb-2 w-full rounded-md bg-white p-4"
@@ -84,7 +84,7 @@ export default async function CustomersTable({
                 </thead>
 
                 <tbody className="divide-y divide-gray-200 text-gray-900">
-                  {customers.map((customer) => (
+                  {customer.map((customer) => (
                     <tr key={customer.id} className="group">
                       <td className="whitespace-nowrap bg-white py-5 pl-4 pr-3 text-sm text-black group-first-of-type:rounded-md group-last-of-type:rounded-md sm:pl-6">
                         <div className="flex items-center gap-3">

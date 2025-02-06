@@ -12,10 +12,10 @@ import { Button } from "@/app/ui/button";
 
 export default function EditInvoiceForm({
   invoice,
-  customers,
+  customer,
 }: {
   invoice: InvoiceForm;
-  customers: CustomerField[];
+  customer: CustomerField[];
 }) {
   return (
     <form>
@@ -35,7 +35,7 @@ export default function EditInvoiceForm({
               <option value="" disabled>
                 Select a customer
               </option>
-              {customers.map((customer) => (
+              {customer.map((customer) => (
                 <option key={customer.id} value={customer.id}>
                   {customer.name}
                 </option>
